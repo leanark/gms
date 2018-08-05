@@ -1,1 +1,1 @@
-[LeanArk LLC](https://www.leanark.com)
+## [LeanArk LLC](http://www.leanark.com)
