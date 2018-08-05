@@ -1,0 +1,49 @@
+.container {
+    width: 100%;
+    margin-top: 2px;
+    background-color: rgba(250,250,250,0.9);
+}
+
+section {
+    padding: 32px 16px;
+    & p {
+        text-align: justify;
+    }
+}
+
+.application-form {
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.hightlight {
+    color: white;
+}
+
+.hightlight-bg {
+    background-color: whitesmoke;
+}
+
+mat-grid-tile:hover {
+    color: white;
+    cursor: pointer;
+}
+
+div.empty {
+    min-height: 500px;
+}
+
+fieldset {
+    margin-top: 24px;
+}
+
+table .full-width {
+    width: 80px !important;
+}
+
+th {
+    text-align: left;
+}

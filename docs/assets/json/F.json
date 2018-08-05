@@ -1,0 +1,47 @@
+{
+    "title": "F. Proposed Budget - Revenue",
+    "sections": [
+        {
+            "subTitle": "1. Fees Collected"
+        },
+        {
+            "subTitle": "a. Admissions and Fees.",
+            "content": "Revenue expected from the sale of admissions, tickets, subscriptions, memberships, etc., for events of the project."
+        },
+        {
+            "subTitle": "b. Contracted Services.",
+            "content": "Fees projected from the sale of services. Include the sale of workshops, etc., to other community organizations, government contracts for specific services, performance or residency fees, tuition, etc. Do not include SFCA share here."
+        },
+        {
+            "subTitle": "2. Private Corporate or Foundation Support.",
+            "content": "Contributions promised for this project by businesses and corporations or private foundations or a proportionate share of such contributions allocated to this project."
+        },
+        {
+            "content": "Other Private Support Revenue expected from cash donations to this project or a proportionate share of general donations allocated to this project. Do not include corporate, foundation, or government contributions."
+        },
+        {
+            "subTitle": "3. Federal Grant or Awards.",
+            "content": "Revenue expected from grants given for this project by agencies of the federal government or a proportionate share of such grants allocated to this project."
+        },
+        {
+            "subTitle": "4. State/Regional/County Support",
+            "content": "State/Regional/County Support for this project expected from agencies of the state, city, county, and/or multi-state consortium of state agencies or a proportionate share of such grants allocated to this project. List each source separately. Do not include SFCA share or SFCA share of another project here."
+        },
+        {
+            "subTitle": "5. Other Revenue.",
+            "content": "Revenue expected from sources other than those listed above. Include catalog sales, advertising space in programs, gift shop income, concessions, parking, sales of products, posters, T-shirts, etc."
+        },
+        {
+            "subTitle": "6. Applicant Cash.",
+            "content": "Funds from accumulated resources, such as trust funds and savings, to be used for the project. Total cash expense must equal total cash income"
+        },
+        {
+            "subTitle": "SFCA Funds for This Project.",
+            "content": "Enter here the amount you will be receiving from the State Foundation on Culture and the Arts for this project."
+        },
+        {
+            "subTitle": "Certification.",
+            "content": "This should be signed by the director or administrative head of your organization with the full knowledge and approval of your governing board."
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "title": "E. Planned Budget - Expenses.",
+    "sections": [
+        {
+            "content": "List the cash expenses for each item in the column “Total Cash Expenses,”and the portion of that to be billed to theSFCA in the column “SFCA Share.” List positions of paid personnel. Attach additional sheets if necessary. Total cash expense must equal total cash income."
+        },
+        {
+            "subTitle": "1. Personnel Costs (Employees)"
+        },
+        {
+            "subTitle": "a. Administrative.",
+            "content": "Payments for employee salaries, wages, fees, and benefits specifically identified with the project, for executive and supervisory administrative staff, program directors, managing directors, business managers, press agents, fund raisers; clerical staff such as secretaries, typists, bookkeepers, and supportive personnel such as maintenance and security staff, ushers, and other front-of-the-house and box office personnel."
+        },
+        {
+            "subTitle": "b. Artistic/Professional.",
+            "content": "Payments for employee salaries, wages, fees, and benefits specifically identified with the project, for artistic directors, conductors, dance masters, composers, choreographers, designers, video artists, filmmakers, painters, poets, authors, historians, archivists, curators, sculptors, graphic artists, actors, dancers, singers, musicians, teachers, instructors, puppeteers, etc."
+        },
+        {
+            "subTitle": "c. Technical/Production.",
+            "content": "Payments for employee salaries, wages, fees, and benefits specifically identified with the project, for technical management and staff, such as technical directors; wardrobe, lighting and sound crew; stage managers; stagehands; video and film technicians; exhibit designers and fabricators; etc."
+        },
+        {
+            "subTitle": "2. Outside (Non-Employee) Fees and Services"
+        },
+        {
+            "subTitle": "a. Artistic/Professional.",
+            "content": "Payments to firms or persons for the services of individuals who are not normally considered your employees, but who are consultants or the employees of other organizations, whose services are specifically identified with the project. Include artistic directors, directors, conductors, dance masters, composers, choreographers, designers, video artists, filmmakers, painters, poets, authors, historians, archivists, curators, sculptors, graphic artists, actors, dancers, singers, musicians, teachers, instructors, etc., serving in non-employee/non-staff capacities."
+        },
+        {
+            "subTitle": "b. Other.",
+            "content": "Payments to firms or persons for non-artistic services of individuals who are not normally considered your employees, but who are consultants or the employees of other organizations whose services are specifically identified with the project. These individuals serve in non-employee/non-staff capacities."
+        },
+        {
+            "subTitle": "3. Other Expenses"
+        },
+        {
+            "subTitle": "a. Space Rental.",
+            "content": "Costs specifically identified with the project for rental of office, rehearsal, theater, hall, gallery, and other such spaces."
+        },
+        {
+            "subTitle": "b. Travel.",
+            "content": "Costs of travel for individual(s) specifically identified with the project. Include number of persons and their travel destinations to and from, per diem payments, fares, hotel and other lodging expenses, taxis, gratuities, toll charges, mileage, car rental costs, ground transportation, etc."
+        },
+        {
+            "subTitle": "c. Marketing (Promotion).",
+            "content": "Costs of marketing/publicity/promotion specifically identified with the project. Include costs of newspaper, radio, and television advertising; printing and mailing of brochures, flyers, and posters; and space rental when directly connected to promotion."
+        },
+        {
+            "subTitle": "d. Remaining Operating Expenses.",
+            "content": "Supplies and materials. Costs of supplies and materials not entered in other categories and specifically identified with the project. May include scripts and scores, lumber and nails, paints and brushes, sets and props, and costumes."
+        }
+    ]
+}

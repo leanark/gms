@@ -1,0 +1,1247 @@
+<div class="container">
+  <mat-grid-list cols="5" rowHeight="48px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="(selectedTile!=null && selectedTile == tile)? '#ff6e40':'#febf58'"
+      (click)="onSelectTile(tile)" [ngClass]="{ 'hightlight': selectedTile!=null && selectedTile == tile}">
+      <span class="mat-caption">{{ tile.text }}</span>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-tab-group mat-stretch-tabs>
+
+    <mat-tab label="General Info">
+      <div style="background-color: white;">
+
+        <section class="mat-typography">
+          <h1 class="text-center">Biennium Grants</h1>
+          <p>Biennium Grants FY2017-FY2019 Call for FY2017 – FY2019 Biennium Grant Program Community Peer Panelists</p>
+        </section>
+
+        <section class="mat-typography">
+          <h2>SFCA 2017 Biennium Grants</h2>
+          <p>In Fiscal Year 2017 (July 1, 2016 – June 30, 2017), $500,000 was disbursed to organizations through the Biennium
+            Grants Program, one of the core pillars of the State Foundation’s commitment to promote, perpetuate, preserve
+            and encourage culture and the arts. Grants are awarded in five categories: Arts Education, Community Arts, Heritage
+            & Preservation, Presentation, and Performing Arts. A list of the grantees for Fiscal Year 2017 is available in
+            the SFCA’s Annual Report: FY2016-2017 SFCA Annual Report.</p>
+        </section>
+
+        <section class="mat-typography">
+          <p>The Hawai‘i State Foundation on Culture and the Arts provides public funds via its SFCA Biennium Grants Program
+            to support projects designed to preserve and further culture, the arts, history, and/or the humanities beneficial
+            to Hawai‘i. The legal provisions of the Biennium Grants Program are in Sections 9-11 through 9-18 of the Hawai‘i
+            Revised Statutes. The Grants Program budget is contingent on the State fiscal biennium and appropriations from
+            the Hawai‘i State Legislature.</p>
+          <p>Through this program, funding is awarded to organizations conducting programming in the arts, culture, history
+            and the humanities that benefit the people of Hawai‘i. Updates regarding submission deadlines, grant workshops,
+            etc. can be found on the Ko‘o Hana Noeau website at culturegrants-hi.org.</p>
+          <p>Biennium Grants Program Guidelines are available here: Grant Guidelines.</p>
+        </section>
+
+        <section class="mat-typography">
+          <h2>Application Process</h2>
+          <p>All original grant proposals, revised proposals, and final reports are to be completed using the Ko‘o Hana No‘eau
+            Electronic Grants System. Grantees may access the system through their respective organization’s user name and
+            password. If you misplace your user name or password or both, please call (808) 586-0840. To enter the system,
+            click here: www.culturegrants-hi.org.</p>
+        </section>
+
+        <section class="mat-typography">
+          <h2>The Grants Process</h2>
+          <p>The SFCA Biennium Grants are awarded for a two-year period. During the application period, all applications received
+            by the application deadline are considered. Applicants are subject to meeting Chapter 9 eligibility requirements
+            and policies established by the SFCA. Grants Panels review the applications and submit their recommendations.
+            The SFCA Board of Commissioners has final approval of the recommendations. Grants are subject to available funding;
+            for more information, click on SFCA Biennium Grants Allocations Policy.</p>
+          <p>All forms and reports should be submitted through Ko’o Hana No’eau. The following PDFs are only to be used in the
+            event that Ko’o Hana No’eau is offline.</p>
+        </section>
+
+        <section class="mat-typography">
+          <h2>Contact</h2>
+          <p>For more information about the Biennium Grants Program, call Charles Medeiros at (808) 586-0309.</p>
+        </section>
+
+      </div>
+    </mat-tab>
+
+    <mat-tab label="SFCA Revised Proposal Form - FY 2019">
+      <div style="background-color: white;">
+        <mat-card>
+          <mat-card-title>Revised Proposal Form</mat-card-title>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                <mat-icon mat-list-icon>label_important</mat-icon>
+                Activities and budget should remain within the intent of the original proposal. Submit the signed original of the Revised
+                Proposal.
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-icon>label_important</mat-icon>
+                The contents of each section of the Revised Proposal should be based on the corresponding sections in the original Request
+                for Proposals application.
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-icon>label_important</mat-icon>
+                If you received partial funding from the SFCA, you may modify proportionately the proposed services (unless you intend to
+                make up the difference). Pare down the SFCA portion of the budget to meet the amount being funded by the
+                SFCA. Any panel restrictions must be incorporated into your revision.
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-icon>label_important</mat-icon>
+                Approval for any changes to the original application must be requested in writing prior to
+                completion of the Revised Proposal and execution of the contract. (If time becomes critical, send request
+                for changes in with Revised Proposal)</mat-list-item>
+              <mat-list-item>
+                <mat-icon mat-list-icon>label_important</mat-icon>
+                Submit profiles of artists/professionals included in section E, "Budget-Expenses."</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+        <mat-vertical-stepper [linear]="isLinear" #stepper>
+
+          <mat-step [stepControl]="formGroupA">
+            <form class="application-form" [formGroup]="formGroupA">
+              <ng-template matStepLabel>A. Project Title</ng-template>
+              <mat-form-field class="full-width">
+                <input matInput placeholder="SFCA Project Code" formControlName="projectCode">
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Project Title" formControlName="projectTitle">
+              </mat-form-field>
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button mat-stroked-button color="primary" (click)="openHelp(helpGroupA)">
+                  <mat-icon aria-label="Help">help_outline</mat-icon>
+                </button>
+                <button mat-flat-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="formGroupB">
+            <form class="application-form" [formGroup]="formGroupB">
+              <ng-template matStepLabel>B. Name of Organization</ng-template>
+
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Name of Organization" formControlName="nameOfOrganization">
+              </mat-form-field>
+
+              <div formGroupName="address">
+                <div fxLayout="row" fxLayoutGap="20px">
+                  <mat-checkbox formControlName="bus">Bus</mat-checkbox>
+                  <mat-checkbox formControlName="mailing">Mailing</mat-checkbox>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="City" formControlName="city">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="State" formControlName="state">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Zip Code" formControlName="zipCode">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div formGroupName="projectDirector">
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Project Director" formControlName="name">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Phone" formControlName="phone">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div formGroupName="contactPerson">
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Contact Person" formControlName="name">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Title" formControlName="title">
+                  </mat-form-field>
+                </div>
+
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Phone (Bus)" formControlName="phoneBus">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Phone (Res)" formControlName="phoneRes">
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button mat-stroked-button color="primary" (click)="openHelp(helpGroupB)">
+                  <mat-icon aria-label="Help">help_outline</mat-icon>
+                </button>
+                <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                <button mat-flat-button color="primary" matStepperNext>Next</button>
+              </div>
+
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="formGroupC">
+            <form class="application-form" [formGroup]="formGroupC">
+              <ng-template matStepLabel>C. Project Period</ng-template>
+              <div formGroupName="projectPeriod">
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="pickerStartDate" placeholder="Start Date" formControlName="startDate">
+                    <mat-datepicker-toggle matSuffix [for]="pickerStartDate"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerStartDate></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="pickerEndDate" placeholder="End Date" formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="pickerEndDate"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerEndDate></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <button mat-stroked-button color="primary" (click)="openHelp(helpGroupC)">
+                    <mat-icon aria-label="Help">help_outline</mat-icon>
+                  </button>
+                  <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                  <button mat-flat-button color="primary" matStepperNext>Next</button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="formGroupD">
+            <form class="application-form" [formGroup]="formGroupD">
+              <ng-template matStepLabel>D. Description of the service(s) to be performed</ng-template>
+              <p>1. List activities, dates, locations, artists or other personnel involved, etc., as specific as possible, based
+                on Section II.D. of the Contractor’s Fiscal Year 2017 Proposal.
+              </p>
+              <div formArrayName="services">
+                <fieldset *ngFor="let service of formGroupD.get('services').controls; let i = index;">
+                  <legend>Activity</legend>
+                  <div [formGroupName]="i">
+                    <mat-form-field class="full-width">
+                      <textarea matInput placeholder="Activity" rows="6" formControlName="activity"></textarea>
+                      <mat-hint>Include a narrative explaining the nature of each activity</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Personnel" formControlName="personnel">
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Location" formControlName="location">
+                    </mat-form-field>
+                    <div fxLayout="row" fxLayoutGap="10px">
+                      <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="pickerActivityStartDate" placeholder="Start Date" formControlName="startDate">
+                        <mat-datepicker-toggle matSuffix [for]="pickerActivityStartDate"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerActivityStartDate></mat-datepicker>
+                      </mat-form-field>
+                      <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="pickerActivityEndDate" placeholder="End Date" formControlName="endDate">
+                        <mat-datepicker-toggle matSuffix [for]="pickerActivityEndDate"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerActivityEndDate></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="10px">
+                    <button mat-stroked-button color="accent" (click)="formGroupD.get('services').removeAt(i)">Remove Activity</button>
+                  </div>
+                </fieldset>
+                <br/>
+              </div>
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button mat-flat-button color="accent" (click)="formGroupD.get('services').controls.push(createService())">Add Another Activity</button>
+              </div>
+              <div fxLayout="column">
+                <div formGroupName="k12">
+                  <p>2. Does this project conduct an artist residency in schools (K-12)?</p>
+                  <mat-radio-group formControlName="yes">
+                    <div fxLayout="row" fxLayoutGap="20px">
+                      <mat-radio-button value="1">Yes</mat-radio-button>
+                      <mat-radio-button value="0">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                  <p></p>
+                  <div *ngIf="formGroupD.get('k12').get('yes').value==true">
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Are you working with the DOE, Artists-in-the-Schools program?" formControlName="artistsInTheSchools">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div fxLayout="column">
+                <div formGroupName="danceConcerts">
+                  <p>3. Does this project present dance concerts?</p>
+                  <mat-radio-group formControlName="yes">
+                    <div fxLayout="row" fxLayoutGap="20px">
+                      <mat-radio-button value="1">Yes</mat-radio-button>
+                      <mat-radio-button value="0">No</mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+                  <p></p>
+                  <div *ngIf="formGroupD.get('danceConcerts').get('yes').value==true">
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Please identify and indicate whether the dance artists are Hawaii-based or out-of-state" formControlName="hawaiiBased">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <p></p>
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button mat-stroked-button color="primary" (click)="openHelp(helpGroupD)">
+                  <mat-icon aria-label="Help">help_outline</mat-icon>
+                </button>
+                <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                <button mat-flat-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="formGroupE">
+            <form class="application-form" [formGroup]="formGroupE">
+
+              <ng-template matStepLabel>E. Planned Budget - Expenses and In-Kind Contributions</ng-template>
+              <p>Must be based on Section II, H. of your Fiscal Year 2017 SFCA Proposal. See instructions for definitions.</p>
+              <fieldset>
+                <legend>1. Personnel Costs (Employees)</legend>
+                <table formArrayName="personnelCosts" width="100%" class="mat-caption">
+                  <thead>
+                    <tr>
+                      <th width="12%">Employees Type</th>
+                      <th width="12%">Number of Persons</th>
+                      <th width="12%">Rate of Pay</th>
+                      <th width="12%">Number of Hours</th>
+                      <th width="12%">Total Cash Expenses</th>
+                      <th width="12%">SFCA Share</th>
+                      <th width="12%">In-Kind Value</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cost of formGroupE.get('personnelCosts').controls; let i = index;" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width">
+                          <mat-select formControlName="type">
+                            <mat-option value="Administrative">a. Administrative</mat-option>
+                            <mat-option value="Artistic/Professional">b. Artistic/Professional</mat-option>
+                            <mat-option value="Technical/Production">c. Technical/Production</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="numberOfPersons">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="rateOfPay">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="numberOfHours">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="totalCashExpenses">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="sfcaShare">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="inKindValue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupE.get('personnelCosts').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <button mat-flat-button color="accent" (click)="formGroupE.get('personnelCosts').push(createPersonnelCost())">Add</button>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>2. Outside (Non-Employee) Fees and Services</legend>
+                <table formArrayName="nonEmployeeCosts" width="100%">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="12%">Non-Employee Type</th>
+                      <th width="12%">Number of Persons</th>
+                      <th width="12%">Rate of Pay</th>
+                      <th width="12%">Number of Hours</th>
+                      <th width="12%">Total Cash Expenses</th>
+                      <th width="12%">SFCA Share</th>
+                      <th width="12%">In-Kind Value</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cost of formGroupE.get('nonEmployeeCosts').controls; let i = index;" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width">
+                          <mat-select formControlName="type">
+                            <mat-option value="Artistic/Professional">a. Artistic/Professional</mat-option>
+                            <mat-option value="Technical/Production">b. Other</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="numberOfPersons">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="rateOfPay">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="numberOfHours">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="totalCashExpenses">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="sfcaShare">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="inKindValue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupE.get('nonEmployeeCosts').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <button mat-flat-button color="accent" (click)="formGroupE.get('nonEmployeeCosts').push(createNonEmployeeCost())">Add</button>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>3. Other Expenses</legend>
+                <div formGroupName="otherExpenses">
+                  <h4>a. Space Rentals</h4>
+                  <table formArrayName="spaceRentals" width="100%" class="hightlight-bg">
+                    <thead class="mat-caption">
+                      <tr>
+                        <th width="48%">Space Rental</th>
+                        <th width="12%">Total Cash Expenses</th>
+                        <th width="12%">SFCA Share</th>
+                        <th width="12%">In-Kind Value</th>
+                        <th width="12%"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('spaceRentals').controls; let i = index;" [formGroupName]="i">
+                        <td>
+                          <mat-form-field class="full-width" fxFlex="90%">
+                            <input matInput formControlName="rental">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="totalCashExpenses">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="sfcaShare">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="inKindValue">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('spaceRentals').removeAt(i)">Remove</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p></p>
+                  <div fxLayout="row" fxLayoutGap="10px">
+                    <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('spaceRentals').push(createSpaceRental())">Add</button>
+                  </div>
+                  <h4>b. Travel</h4>
+                  <div formGroupName="travel">
+                    <h5>Transportation</h5>
+                    <table formArrayName="transportation" width="100%" class="hightlight-bg">
+                      <thead class="mat-caption">
+                        <tr>
+                          <th width="12%">Number of Personsl</th>
+                          <th width="18%">From</th>
+                          <th width="18%">To</th>
+                          <th width="12%">Total Cash Expenses</th>
+                          <th width="12%">SFCA Share</th>
+                          <th width="12%">In-Kind Value</th>
+                          <th width="12%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('travel').get('transportation').controls; let i = index;" [formGroupName]="i">
+                          <td>
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="numberOfPersons">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="full-width" fxLayoutAlign="start stretch">
+                              <input matInput [matDatepicker]="pickerFrom" formControlName="from">
+                              <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+                              <mat-datepicker #pickerFrom></mat-datepicker>
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="full-width" fxLayoutAlign="start stretch">
+                              <input matInput [matDatepicker]="pickerTo" formControlName="to">
+                              <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                              <mat-datepicker #pickerTo></mat-datepicker>
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="totalCashExpenses">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="sfcaShare">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="inKindValue">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('transportation').removeAt(i)">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <div fxLayout="row">
+                      <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('transportation').push(createTransportation())">Add</button>
+                    </div>
+
+                    <h5>Per Diem</h5>
+                    <table formArrayName="perDiem" width="100%" class="hightlight-bg">
+                      <thead class="mat-caption">
+                        <tr>
+                          <th width="24%">Number of Personsl</th>
+                          <th width="12%">Rate</th>
+                          <th width="12%">Days</th>
+                          <th width="12%">Total Cash Expenses</th>
+                          <th width="12%">SFCA Share</th>
+                          <th width="12%">In-Kind Value</th>
+                          <th width="12%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('travel').get('perDiem').controls; let i = index;" [formGroupName]="i">
+                          <td>
+                            <mat-form-field class="full-width" fxFlex="90%">
+                              <input matInput formControlName="numberOfPersons">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="rate">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="days">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="totalCashExpenses">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="sfcaShare">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="inKindValue">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('perDiem').removeAt(i)">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <div fxLayout="row">
+                      <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('perDiem').push(createPerDiemOrOther())">Add</button>
+                    </div>
+
+                    <h5>Other</h5>
+                    <table formArrayName="other" width="100%" class="hightlight-bg">
+                      <thead class="mat-caption">
+                        <tr>
+                          <th width="24%">Number of Personsl</th>
+                          <th width="12%">Rate</th>
+                          <th width="12%">Days</th>
+                          <th width="12%">Total Cash Expenses</th>
+                          <th width="12%">SFCA Share</th>
+                          <th width="12%">In-Kind Value</th>
+                          <th width="12%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('travel').get('other').controls; let i = index;" [formGroupName]="i">
+                          <td>
+                            <mat-form-field class="full-width" fxFlex="90%">
+                              <input matInput formControlName="numberOfPersons">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="rate">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="days">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="totalCashExpenses">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="sfcaShare">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="inKindValue">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('other').removeAt(i)">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <div fxLayout="row">
+                      <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('travel').get('other').push(createPerDiemOrOther())">Add</button>
+                    </div>
+
+                  </div>
+
+                  <h4>c. Marketing (Promotion)</h4>
+                  <table formArrayName="marketing" width="100%" class="hightlight-bg">
+                    <thead class="mat-caption">
+                      <tr>
+                        <th width="48%">Marketing (Promotion)</th>
+                        <th width="12%">Total Cash Expenses</th>
+                        <th width="12%">SFCA Share</th>
+                        <th width="12%">In-Kind Value</th>
+                        <th width="12%"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('marketing').controls; let i = index;" [formGroupName]="i">
+                        <td>
+                          <mat-form-field class="full-width" fxFlex="90%">
+                            <input matInput formControlName="marketing">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="totalCashExpenses">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="sfcaShare">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          $
+                          <mat-form-field class="full-width">
+                            <input matInput formControlName="inKindValue">
+                          </mat-form-field>
+                        </td>
+                        <td>
+                          <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('marketing').removeAt(i)">Remove</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p></p>
+                  <div fxLayout="row">
+                    <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('marketing').push(createMarketing())">Add</button>
+                  </div>
+
+                  <h4>d. Remaining Operating Expenses</h4>
+
+                  <div formGroupName="remainingOperatingExpenses">
+                    <h5>Supplies and Materials</h5>
+                    <table formArrayName="suppliesAndMaterials" width="100%" class="hightlight-bg">
+                      <thead class="mat-caption">
+                        <tr>
+                          <th width="48%">Supplies and Materials</th>
+                          <th width="12%">Total Cash Expenses</th>
+                          <th width="12%">SFCA Share</th>
+                          <th width="12%">In-Kind Value</th>
+                          <th width="12%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('suppliesAndMaterials').controls; let i = index;"
+                          [formGroupName]="i">
+                          <td>
+                            <mat-form-field class="full-width" fxFlex="90%">
+                              <input matInput formControlName="suppliesAndMaterial">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="totalCashExpenses">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="sfcaShare">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="inKindValue">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('suppliesAndMaterials').removeAt(i)">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <div fxLayout="row">
+                      <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('suppliesAndMaterials').push(createSuppliesAndMaterial())">Add</button>
+                    </div>
+
+                    <h5>Other Expenses</h5>
+
+                    <table formArrayName="otherExpenses" width="100%" class="hightlight-bg">
+                      <thead class="mat-caption">
+                        <tr>
+                          <th width="48%">Other Expenses</th>
+                          <th width="12%">Total Cash Expenses</th>
+                          <th width="12%">SFCA Share</th>
+                          <th width="12%">In-Kind Value</th>
+                          <th width="12%"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let cost of formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('otherExpenses').controls; let i = index;"
+                          [formGroupName]="i">
+                          <td>
+                            <mat-form-field class="full-width" fxFlex="90%">
+                              <input matInput formControlName="otherExpense">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="totalCashExpenses">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="sfcaShare">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            $
+                            <mat-form-field class="full-width">
+                              <input matInput formControlName="inKindValue">
+                            </mat-form-field>
+                          </td>
+                          <td>
+                            <button mat-stroked-button color="accent" (click)="formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('otherExpenses').removeAt(i)">Remove</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p></p>
+                    <div fxLayout="row">
+                      <button mat-flat-button color="accent" (click)="formGroupE.get('otherExpenses').get('remainingOperatingExpenses').get('otherExpenses').push(createOtherExpense())">Add</button>
+                    </div>
+
+                  </div>
+                </div>
+              </fieldset>
+              <p></p>
+              <div formGroupName="totals" fxLayout="row" fxLayoutGap="10px">
+                <h5>Totals:</h5>
+                $
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Total Cash Expenses (incl. SFCA share)" formControlName="totalCashExpenses">
+                </mat-form-field>
+                $
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Total SFCA Share" formControlName="sfcaShare">
+                </mat-form-field>
+                $
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Total In-Kind $ Value (but not in cash)" formControlName="inKindValue">
+                </mat-form-field>
+              </div>
+
+              <p></p>
+              <div fxLayout="row" fxLayoutGap="10px">
+                <button mat-stroked-button color="primary" (click)="openHelp(helpGroupE)">
+                  <mat-icon aria-label="Help">help_outline</mat-icon>
+                </button>
+                <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                <button mat-flat-button color="primary" matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="formGroupF">
+            <form class="application-form" [formGroup]="formGroupF">
+              <ng-template matStepLabel>F. Planned Budget - Revenue</ng-template>
+              <p>Must be based on Section II, H. of your Fiscal Year 2017 SFCA Proposal. See instructions for definitions.</p>
+
+
+              <fieldset formGroupName="feesCollected">
+                <legend>1. Fees Collected</legend>
+
+                <h5>a. Admissions and Fees</h5>
+                <table formArrayName="admissions" width="100%" class="hightlight-bg">
+
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="12%">No of persons</th>
+                      <th width="12%">Fee</th>
+                      <th width="24%">Total Fee</th>
+                      <th width="24%">Per</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('feesCollected').get('admissions').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="numberOfPersons">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="fee">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width" fxLayoutAlign="start stretch">
+                          <input matInput formControlName="totalFee">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <mat-form-field class="full-width" fxLayoutAlign="start stretch">
+                          <input matInput formControlName="per">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('feesCollected').get('admissions').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('feesCollected').get('admissions').push(createAdmissions())">Add</button>
+                </div>
+                <p></p>
+                <h5>b. Contracted Services</h5>
+                <table formArrayName="contractedServices" width="100%" class="hightlight-bg">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Service</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('feesCollected').get('contractedServices').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('feesCollected').get('contractedServices').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('feesCollected').get('contractedServices').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+              <p></p>
+              <fieldset formGroupName="privateSupport">
+                <legend>2. Private Corporate or Foundation Support</legend>
+
+                <table formArrayName="corporateOrFoundation" width="100%" class="hightlight-bg">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Private Corporate or Foundation Support</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('privateSupport').get('corporateOrFoundation').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('privateSupport').get('corporateOrFoundation').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('privateSupport').get('corporateOrFoundation').push(createRevenue())">Add</button>
+                </div>
+                <p></p>
+                <table formArrayName="other" width="100%" class="hightlight-bg">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Other Private Contributions</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('privateSupport').get('other').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('privateSupport').get('other').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('privateSupport').get('other').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+
+
+              <fieldset>
+                <legend>3. Federal Grants or Awards</legend>
+                <table formArrayName="federalGrantsOrAwards" width="100%">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Federal Grants or Awards</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('federalGrantsOrAwards').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('federalGrantsOrAwards').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('federalGrantsOrAwards').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+
+
+              <fieldset>
+                <legend>4. State/Regional/County Support</legend>
+
+                <table formArrayName="stateRegionalCountySupport" width="100%">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">State/Regional/County Support (list individually)</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('stateRegionalCountySupport').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('stateRegionalCountySupport').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('stateRegionalCountySupport').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+
+
+              <fieldset>
+                <legend>5. Other Revenue</legend>
+                <table formArrayName="otherRevenue" width="100%">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Other Revenue</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('otherRevenue').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('otherRevenue').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('otherRevenue').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>6.Applicant Cash (including trust funds)</legend>
+                <table formArrayName="applicantCash" width="100%">
+                  <thead class="mat-caption">
+                    <tr>
+                      <th width="72%">Applicant Cash</th>
+                      <th width="12%">Revenue</th>
+                      <th width="12%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cash of formGroupF.get('applicantCash').controls; let i=index" [formGroupName]="i">
+                      <td>
+                        <mat-form-field class="full-width" fxFlex>
+                          <input matInput formControlName="name">
+                        </mat-form-field>
+                      </td>
+                      <td> $
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="revenue">
+                        </mat-form-field>
+                      </td>
+                      <td>
+                        <button mat-stroked-button color="accent" (click)="formGroupF.get('applicantCash').removeAt(i)">Remove</button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p></p>
+                <div fxLayout="row">
+                  <button mat-flat-button color="accent" (click)="formGroupF.get('applicantCash').push(createRevenue())">Add</button>
+                </div>
+              </fieldset>
+              <p></p>
+              <div fxLayout="row" fxLayoutGap="10px">
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Subtotal" formControlName="subtotal">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="SFCA Funds" formControlName="sfcaFunds">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Total Cash Revenue" formControlName="totalCashRevenue">
+                </mat-form-field>
+              </div>
+              <p></p>
+              <fieldset formGroupName="certification">
+                <legend>Certification</legend>
+                <p>The information contained in this proposal is correct to the best of my knowledge and has been duly authorized
+                  by the governing body of the applicant based on terms, conditions, and specifications set forth in the
+                  original proposal submitted in 2017.
+                </p>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Signature" formControlName="signature">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="picker" placeholder="Date" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Name" formControlName="name">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Title" formControlName="title">
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutGap="10px">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Telephone (bus.)" formControlName="telephoneBus">
+                  </mat-form-field>
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Telephone (res.)" formControlName="telephoneRes">
+                  </mat-form-field>
+                </div>
+              </fieldset>
+
+            </form>
+
+            <p></p>
+            <div fxLayout="row" fxLayoutGap="10px">
+              <button mat-stroked-button color="primary" (click)="openHelp(helpGroupF)">
+                <mat-icon aria-label="Help">help_outline</mat-icon>
+              </button>
+              <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+              <button mat-flat-button color="primary" matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <p></p>
+            <div fxLayout="row" fxLayoutGap="10px">
+              <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Supporting Documents">
+      <div class="empty"></div>
+    </mat-tab>
+
+    <mat-tab label="Final Project Report - FY 2019">
+      <div class="empty"></div>
+    </mat-tab>
+
+    <mat-tab label="Payments">
+      <div class="empty"></div>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+<footer></footer>
